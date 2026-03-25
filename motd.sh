@@ -58,7 +58,7 @@ echo -e "${WHITE}━━━━━━━━━━━━━━━━━━━━━
 echo -e "${BLUE}  * Documentation:  https://help.ubuntu.com${RESET}"
 echo -e "${BLUE}  * Support:        https://ubuntu.com/pro${RESET}"
 echo -e "${WHITE}  * Tip: Secure Kubernetes at the edge!${RESET}"
-echo -e "    Learn more: https://ubuntu.com/engage/secure-kubernetes-at-the-edge"
+echo -e "${WHITE}Learn more: https://ubuntu.com/engage/secure-kubernetes-at-the-edge${RESET}"
 echo ""
 
 # --- Optional upgrade info ---
