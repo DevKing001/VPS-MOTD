@@ -65,7 +65,7 @@ echo ""
 if command -v apt >/dev/null 2>&1; then
     UPDATES=$(apt list --upgradable 2>/dev/null | grep -v Listing | wc -l)
     if [ "$UPDATES" -gt 0 ]; then
-        echo -e "${WHITE}⚠ $UPDATES packages can be updated. Run 'apt list --upgradable'.${RESET}"
+        echo -e "${WHITE}⚠  $UPDATES packages can be updated. Run 'apt list --upgradable'.${RESET}"
     fi
 fi
 
