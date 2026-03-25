@@ -1,15 +1,12 @@
 #!/bin/bash
 # ==========================================
-# Custom MOTD Script (Ubuntu + HyperCloud Mix)
+# HyperCloud Classic MOTD (Blue/White/Black)
 # ==========================================
 
 # ===== Colors =====
-GREEN="\e[38;5;82m"
-CYAN="\e[38;5;51m"
 BLUE="\e[38;5;39m"
-MAGENTA="\e[38;5;213m"
-YELLOW="\e[38;5;220m"
-GRAY="\e[38;5;245m"
+WHITE="\e[38;5;15m"
+BLACK="\e[48;5;0m"
 RESET="\e[0m"
 
 # ===== System Info =====
@@ -30,38 +27,51 @@ PROCS=$(ps -e --no-headers | wc -l)
 
 # ===== MOTD Display =====
 echo ""
-echo -e "${BLUE}██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗██╗      ██████╗ ██╗   ██╗██████╗ "
-echo -e "██║  ██║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗"
-echo -e "███████║ ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║     ██║     ██║   ██║██║   ██║██║  ██║"
-echo -e "██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║     ██║   ██║██║   ██║██║  ██║"
-echo -e "██║  ██║   ██║   ██║     ███████╗██║  ██║╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝"
-echo -e "╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝ ${RESET}"
+# --- HyperCloud ASCII Banner ---
+echo -e "${BLUE}"
+cat << "BANNER"
+██╗  ██╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗██╗      ██████╗ ██╗   ██╗██████╗ 
+██║  ██║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗
+███████║ ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║     ██║     ██║   ██║██║   ██║██║  ██║
+██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║     ██║   ██║██║   ██║██║  ██║
+██║  ██║   ██║   ██║     ███████╗██║  ██║╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝
+╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝
+BANNER
+echo -e "${RESET}"
 echo ""
 
-echo -e "${GREEN}🚀 Welcome to $HOSTNAME${RESET}"
-echo -e "${CYAN}System: $OS | Kernel: $KERNEL | Uptime: $UPTIME${RESET}"
-echo -e "${GRAY}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+echo -e "${BLUE}🚀 Welcome to HyperCloud${RESET}"
+echo -e "${WHITE}System: $OS | Kernel: $KERNEL | Uptime: $UPTIME${RESET}"
+echo -e "${WHITE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
 
-printf "${CYAN}%-18s${RESET} %s\n" "Load:" "$LOAD"
-printf "${CYAN}%-18s${RESET} %sMB / %sMB (${YELLOW}%s%%${RESET})\n" "Memory:" "$MEM_USED" "$MEM_TOTAL" "$MEM_PERC"
-printf "${CYAN}%-18s${RESET} %s\n" "Disk Usage:" "$DISK"
-printf "${CYAN}%-18s${RESET} %s\n" "Processes:" "$PROCS"
-printf "${CYAN}%-18s${RESET} %s\n" "Users Online:" "$USERS"
-printf "${CYAN}%-18s${RESET} %s\n" "IP Address:" "$IP"
+# --- System Stats ---
+printf "${WHITE}%-20s %s\n${RESET}" "Load:" "$LOAD"
+printf "${WHITE}%-20s %sMB / %sMB (%s%%)\n${RESET}" "Memory usage:" "$MEM_USED" "$MEM_TOTAL" "$MEM_PERC"
+printf "${WHITE}%-20s %s\n${RESET}" "Disk Usage:" "$DISK"
+printf "${WHITE}%-20s %s\n${RESET}" "Processes:" "$PROCS"
+printf "${WHITE}%-20s %s\n${RESET}" "Users logged in:" "$USERS"
+printf "${WHITE}%-20s %s\n${RESET}" "IPv4 Address:" "$IP"
 
-echo -e "${GRAY}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-echo -e "${GREEN}Documentation:${RESET} https://help.ubuntu.com"
-echo -e "${GREEN}Support:${RESET}       https://ubuntu.com/pro"
-echo -e "${MAGENTA}Tip: Secure Kubernetes at the edge!${RESET}"
-echo -e "      Learn more: https://ubuntu.com/engage/secure-kubernetes-at-the-edge"
+echo -e "${WHITE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+
+# --- Links & Tips ---
+echo -e "${BLUE}  * Documentation:  https://help.ubuntu.com${RESET}"
+echo -e "${BLUE}  * Support:        https://ubuntu.com/pro${RESET}"
+echo -e "${WHITE}  * Tip: Secure Kubernetes at the edge!${RESET}"
+echo -e "    Learn more: https://ubuntu.com/engage/secure-kubernetes-at-the-edge"
 echo ""
 
-# Optional upgrade info (requires apt-update run recently)
+# --- Optional upgrade info ---
 if command -v apt >/dev/null 2>&1; then
     UPDATES=$(apt list --upgradable 2>/dev/null | grep -v Listing | wc -l)
     if [ "$UPDATES" -gt 0 ]; then
-        echo -e "${YELLOW}⚠ $UPDATES packages can be updated. Run 'apt list --upgradable'.${RESET}"
+        echo -e "${WHITE}⚠ $UPDATES packages can be updated. Run 'apt list --upgradable'.${RESET}"
     fi
+fi
+
+# --- Optional restart notice ---
+if [ -f /var/run/reboot-required ]; then
+    echo -e "${WHITE}*** System restart may be required ***${RESET}"
 fi
 
 echo -e "${MAGENTA}*** System restart may be required ***${RESET}"
