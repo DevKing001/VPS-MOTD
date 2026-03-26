@@ -40,7 +40,7 @@ BANNER
 echo -e "${RESET}"
 echo ""
 
-echo -e "${BLUE}🚀 Welcome to HyperCloud${RESET}"
+echo -e "${BLUE}🚀  Welcome to HyperCloud${RESET}"
 echo -e "${WHITE}System: $OS | Kernel: $KERNEL | Uptime: $UPTIME${RESET}"
 echo -e "${WHITE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
 
